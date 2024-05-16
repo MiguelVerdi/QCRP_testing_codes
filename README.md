@@ -13,7 +13,7 @@ Each of the `ExperimentDataFiles\Routing_compare_0922\highway*_**.mat` files is 
 
 
 - There is an special kind of experiment called DGGR, the files are found in `ExperimentFiles\DGGR\highway*_DGGR.mat` this file is processed in `ExperimentPrograms\DataProcessingFiles\ExperimentmToCSVDGGR.m` you only have to copy paste the code in matlab and charge the file after running the program, it would ask for the file this should be the .mat file found in `ExperimentDataFiles\Routing_compare_0922`, this generates the files found in `ExerimentDataFiles`.
-- 
+
 
 - The `ExperimentDataFiles\highway*_**.csv` files are the input for the main C++ simulation, to run this file you must have installed the simulation software `ns3.33` and in the `ns-allinone-3.33\ns3-. 33` folder paste the `.csv` file, save the `ExperimentPrograms\MainSimulation\ExperimentMain.cc` and `ExperimentPrograms\MainSimulation\HighwayExperiment.h` program in `ns-allinone-3.33\ns3-.33\scratch` and to modify the input file you must specify it in the main function of `ExperimentPrograms\MainSimulation\ExperimentMain.cc`.
   
