@@ -10,29 +10,25 @@ These are located in the `ExperimentDataFiles\Routing_compare_0922` file and are
 
 ##Proposed algorithm
 
+- Each of the `ExperimentDataFiles\Routing_compare_0922\highway*_**.mat` files is processed in Matlab Online using the file named `ExperimentPrograms\DataProcessingFiles\ExperimentmToCSVComparison.m`, you only have to copy paste the code in matlab and charge the file after running the program, it would ask for the file, this generates the files found in `ExperimentDataFiles` which are `ExperimentFiles\**\highway*_**.csv` files, containing the data from the .mat file but unpacked to .csv so that C++ can read them in a more orderly.
 
-- Each of the `ExperimentDataFiles\Routing_compare_0922\highway*_**.mat` files is processed in Matlab Online using the file named `ExperimentPrograms\DataProcessingFiles\ExperimentmToCSVComparison.m`, you only have to copy paste the code in matlab and charge the file after running the program, it would ask for the file, this generates the files found in `ExperimentDataFiles` which are `ExperimentFiles\**\highway*_**.csv` files, containing the data from the .mat file but unpacked so that C++ can read them in a more orderly.
+- There is an special kind of experiment called DGGR, the files are found in `ExperimentFiles/DGGR/highway*_DGGR.mat` this file is processed in `ExperimentPrograms\DataProcessingFiles\ExperimentmToCSVDGGR.m` you only have to copy paste the code in matlab and charge the file after running the program, it would ask for the file this should be the .mat file found in `ExperimentDataFiles\Routing_compare_0922`, this generates the files found in `ExerimentDataFiles`.
+- 
 
-##Comparision with other algorithms
-- There are 4 types of scenarios `*` = AODV,NPCA,PQGR,DGGR
-
-- Each of the `InputFiles\Ruting_compare_0922\highway*_**.mat` files is processed in Matlab Online using the file named `ExperimentDataFiles\Routing_compare_09\ExperimentmToCSVProposed.m`, you only have to copy paste the code in matlab and charge the file after running the program, it would ask for the file, this generates the files found in `ExerimentDataFiles` which are `ExperimentDataFiles\**\highway*_**.csv` files, containing the data from the .mat file but unpacked so that C++ can read them in a more orderly.
-
-- There is an special kind of experiment called DGGR, the files are found in `ExperimentFiles/DGGR/highway*_DGGR.mat` this file is processed in `ExperimentPrograms\DataProcessingFiles\ExperimentmToCSVDGGR.m` you only have to copy paste the code in matlab and charge the file after running the program, it would ask for the file, this generates the files found in `ExerimentDataFiles` which are `ExperimentDataFiles/**/highway*_**.csv` files, containing the data from the .mat file but unpacked so that C++ can read them in a more orderly.
-
-- These `ExperimentDataFiles/highway*_PQGR.csv` files are the input for the main C++ simulation, to run this file you must have installed the simulation software `ns3.33` and in the `ns-allinone-3.33/ns3-. 33` folder paste the `.csv` file, save the `ExperimentMain.cc` and `HighwayExperiment.h` program in `ns-allinone-3.33/ns3-.33/scratch` and to modify the input file you must specify it in the main function of `ExperimentMain.cc`.
+- The `ExperimentDataFiles/highway*_**.csv` files are the input for the main C++ simulation, to run this file you must have installed the simulation software `ns3.33` and in the `ns-allinone-3.33/ns3-. 33` folder paste the `.csv` file, save the `ExperimentPrograms\MainSimulation\ExperimentMain.cc` and `ExperimentPrograms\MainSimulation\HighwayExperiment.h` program in `ns-allinone-3.33/ns3-.33/scratch` and to modify the input file you must specify it in the main function of `ExperimentPrograms\MainSimulation\ExperimentMain.cc`.
   
-- This experiment takes approximately 4 hours to run and generates the files `ExperimentResultFiles/highway*_PQGR_Result.csv`. 
+- This experiment takes approximately 4 hours to run and generates the files `ExperimentDataFiles\**\highway*_**_Result.csv`. 
 
-- Finally this file is run in the python3 program `PlotFileExperiment.py` where you must specify in the file_path variable the file you want to display.
-This generates the `ExperimentResultPlots/*/highway*_PQGR_Result_**_plot.png` files.
+- Finally this file is run in the python3 program `ExperimentPrograms\VisualizationPrograms\PlotFileExperiment.py` where you must specify in the file_path variable the file you want to display.
 
-- Where ** = DataRate, Distance, Hops,Latency,PDR 
+- There are 4 types of plots `***` = PDR,Lattency,Hops,Distance,DataRate. 
+  
+- This generates the `ExperimentResultPlots(output)\**\highway*_**_Result_***_plot.png` files.
 
-- In addition a final plot is generated with all these graphs together `ExperimentResultPlots/**/highway*_PQGR_Result_AllFigures.png`.
+- In addition a final plot is generated with all these graphs together `ExperimentResultPlots(output)\**\highway*_**_Result_AllFigures.png`.
 
 # General specifications of the simulation
-- All the parameters can be changes in the `HighwayExperiment.h` for configurtion `HighwayExperiment::Configure()` 
+- All the parameters can be changes in the `ExperimentPrograms\MainSimulation\HighwayExperiment.h` for configurtion `HighwayExperiment::Configure()` 
 ## Simulation Time
 Simulation time = 1s.
 
@@ -74,9 +70,9 @@ In that case  the newtor io would be 10.3.31.0 and the sender would be IP(10.3.3
 - **Highway Specification:** 5Km.
 - **Track of Highway:** 3.5mts
 
-## Files `highway*_PQGR.mat` Unpack
-- **Filename Format:** `highway*_PQGR.mat`
-  - `*` = Dense, Sparse, Usparse, Vsparse
+## Files `highway*_**.mat` Unpack
+- **Filename Format:** `highway*_**.mat`
+
 
 **Variables:**
 1. **`Cluster_time.mat`:** Entire cluster information
@@ -117,7 +113,7 @@ In that case  the newtor io would be 10.3.31.0 and the sender would be IP(10.3.3
 - 4. Each row represents the (cluster ID, x position (m), y position (m), velocity (m/s))
 
 ## Data Formatting for Simulation
-- `highway*_PQGR.mat` -> `ExperimentData.m` -> `highway*_PQGR.csv`
+- `highway*_**.mat` -> `ExperimentData.m` -> `highway*_**.csv`
 - For the comparing is the same
 - `*` = Dense, Sparse, Usparse, Vsparse
 
@@ -129,7 +125,7 @@ In that case  the newtor io would be 10.3.31.0 and the sender would be IP(10.3.3
 - In direction, `0` means forward, `1` means backward.
 
 ## Data Writing
-When running the simulation, the program generates a file `highway*_PQGR_simResults.csv` with the following headers:
+When running the simulation, the program generates a file `highway*_**_simResults.csv` with the following headers:
 
 | Time | Total Clusters | GPCA | Max Th | Avg Th | Min Th | Max Lat | Avg Lat | Min Lat | Max PDR | Avg PDR | Min PDR | Max Dist | Avg Dist | Min Dist | Max Hop | Avg Hop | Min Hop |
 |------|----------------|------|--------|--------|--------|---------|---------|---------|---------|---------|---------|----------|----------|----------|---------|---------|---------|
