@@ -42,7 +42,7 @@ The simulation time is set to 1s.
 - A multi-hop ad-hoc network is generated in each experiment with static routing.
 
 ### Channel
-- **Tx Power:** 35 dBm
+- **Tx Power:** 23 dBm
 - **Frequency:** 5.9 GHz
 - **Bandwidth:** 40 MHz
 - **Phy Mode:** VhtMcs6
