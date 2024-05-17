@@ -130,6 +130,14 @@ When the simulation runs, the program generates a file `highway*_**_simResults.c
 
 
 ## Example Results visualization - High-density scenario
-<img src="https://github.com/MiguelVerdi/QCRP_testing_codes/ExperimentResultPlots(output)/NEW/Dense-DataRate.pdf" width="100">
+- Data rate performance
+<img src="https://github.com/MiguelVerdi/QCRP_testing_codes/assets/34680443/355e9956-b22d-4408-a949-f48629c5e4ed" width="500">
+
+- E2E latency performance
+<img src="https://github.com/MiguelVerdi/QCRP_testing_codes/assets/34680443/11d45664-7849-4fd1-a0e7-e013b50ba1f6" width="500">
+
+- E2E reliability performance
+<img src="https://github.com/MiguelVerdi/QCRP_testing_codes/assets/34680443/ecdcada7-62b3-43e8-b936-543b6271e525" width="500">
+
 
 
