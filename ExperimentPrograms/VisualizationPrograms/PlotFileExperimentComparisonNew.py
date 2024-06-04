@@ -85,7 +85,7 @@ avgTh1 = [row[4] for row in data1]
 minTh1= [row[5] for row in data1]
 #Change the Lattency values to ms. 
 maxLat1 = [1000*row[6] for row in data1]
-avgLat1 = [1000*row[7] + 21.5 for row in data1]
+avgLat1 = [1000*row[7] for row in data1]
 minLat1= [1000*row[8] for row in data1]
 #Change the PDR to 0% to 100% values
 maxPDR1 = [100*row[9] for row in data1]
@@ -115,7 +115,7 @@ avgTh2 = [row[4] for row in data2]
 minTh2 = [row[5] for row in data2]
 #Change the Lattency values to ms. 
 maxLat2 = [1000*row[6] for row in data2]
-avgLat2 = [1000*row[7] + 23.5 for row in data2]
+avgLat2 = [1000*row[7] for row in data2]
 minLat2= [1000*row[8] for row in data2]
 #Change the PDR to 0% to 100% values
 maxPDR2 = [100*row[9] for row in data2]
@@ -145,7 +145,7 @@ avgTh3 = [row[4] for row in data3]
 minTh3 = [row[5] for row in data3]
 # Change the Latency values to ms
 maxLat3 = [1000 * row[6] for row in data3]
-avgLat3 = [1000 * row[7] + 23.5 for row in data3]
+avgLat3 = [1000 * row[7] for row in data3]
 minLat3 = [1000 * row[8] for row in data3]
 # Change the PDR to 0% to 100% values
 maxPDR3 = [100 * row[9] for row in data3]
@@ -175,7 +175,7 @@ avgTh4 = [row[4] for row in data4]
 minTh4 = [row[5] for row in data4]
 # Change the Latency values to ms
 maxLat4 = [1000 * row[6] for row in data4]
-avgLat4 = [1000 * row[7] + 20 for row in data4]
+avgLat4 = [1000 * row[7] for row in data4]
 minLat4 = [1000 * row[8] for row in data4]
 # Change the PDR to 0% to 100% values
 maxPDR4 = [100 * row[9] for row in data4]
